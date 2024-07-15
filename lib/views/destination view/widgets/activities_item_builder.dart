@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../models/destination_model.dart';
 import 'activites_item.dart';
+
 class ActivitiesItemBuilder extends StatelessWidget {
   const ActivitiesItemBuilder({
     super.key,
@@ -13,6 +14,7 @@ class ActivitiesItemBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: const EdgeInsets.all(0),
       itemCount: destination.activities.length,
       itemBuilder: (context, index) {
         return ActivitiesItem(activity: destination.activities[index]);

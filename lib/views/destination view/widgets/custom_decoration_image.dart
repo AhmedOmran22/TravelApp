@@ -32,7 +32,7 @@ class CustomDecorationImage extends StatelessWidget {
         boxShadow: const [
           BoxShadow(
             color: Colors.black,
-            offset: Offset(0, 2),
+            offset: Offset(0, 1),
             blurRadius: 2,
           ),
         ],
@@ -99,5 +99,4 @@ class CustomDecorationImage extends StatelessWidget {
       ),
     );
   }
-  
 }

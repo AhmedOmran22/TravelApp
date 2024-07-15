@@ -24,8 +24,8 @@ class ActivitiesItem extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
-          padding: const EdgeInsets.fromLTRB(150, 20, 20, 20),
+          margin: const EdgeInsets.fromLTRB(80, 5, 20, 5),
+          padding: const EdgeInsets.fromLTRB(80, 20, 20, 20),
           height: MediaQuery.of(context).size.height * .22,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
@@ -36,52 +36,22 @@ class ActivitiesItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: 130,
-                    child: Text(
-                      activity.name,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        r'$ ' '${activity.price.toString()}',
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
+              Text(
+                activity.name,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-              Row(
-                children: [
-                  Text(
-                    activity.type,
-                    style: const TextStyle(
-                      color: Colors.grey,
-                    ),
-                  ),
-                  const Spacer(),
-                  const Text(
-                    'per Pax',
-                    style: TextStyle(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
+              Text(
+                activity.type,
+                style: const TextStyle(
+                  color: Colors.grey,
+                ),
               ),
               const SizedBox(height: 5),
               _buildStars(activity.rating),
-              const SizedBox(height: 5),
+              const SizedBox(height: 10),
               Row(
                 children: [
                   Container(
@@ -123,7 +93,22 @@ class ActivitiesItem extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-        )
+        ),
+        Positioned(
+          right: 35,
+          bottom: 20,
+          child: Column(
+            children: [
+              Text(
+                r'$ ' '${activity.price.toString()}',
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
